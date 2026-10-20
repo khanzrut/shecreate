@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="id" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHECREATE STORE - Premium Digital Products & Subscriptions</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            orange: '#f97316',
+                            gold: '#f59e0b',
+                            amber: '#fbbf24',
+                            yellow: '#fde047',
+                            accent: '#10b981'
+                        },
+                        darkbg: '#0c0a09',
+                        darkcard: '#1c1917',
+                        darkborder: '#292524'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0c0a09;
+            color: #f5f5f4;
+        }
+        /* Custom Glassmorphism Effects */
+        .glass-panel {
+            background: rgba(28, 25, 23, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-card {
+            background: rgba(28, 25, 23, 0.6);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-card:hover {
+            border-color: rgba(245, 158, 11, 0.5);
+            box-shadow: 0 0 25px -5px rgba(245, 158, 11, 0.2);
+            transform: translateY(-4px);
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0c0a09;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #292524;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #f59e0b;
+        }
+        /* Gradient Text */
+        .text-gradient {
+            background: linear-gradient(135deg, #fbbf24 0%, #f97316 50%, #ef4444 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between antialiased selection:bg-amber-500 selection:text-black">
+
+    <!-- TOP ANNOUNCEMENT BANNER -->
+    <div class="bg-gradient-to-r from-amber-600 via-orange-600 to-red-600 text-white text-xs sm:text-sm font-medium py-2 px-4 text-center shadow-lg flex items-center justify-center gap-2">
+        <span class="bg-black/30 text-amber-200 px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider animate-pulse">PROMO SPECIAL</span>
+        <span>✨ Welcome to SHECREATE STORE! Scan QRIS & Get Special Offer! Proses Serba Cepat & 100% Legal.</span>
+    </div>
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="sticky top-0 z-40 glass-panel border-b border-stone-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- LOGO -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-amber-500 via-orange-500 to-red-500 p-0.5 shadow-lg shadow-amber-500/20 group-hover:scale-105 transition-transform">
+                        <div class="w-full h-full bg-stone-950 rounded-[10px] flex items-center justify-center">
+                            <i class="fa-solid fa-sparkles text-amber-400 text-lg group-hover:text-amber-300 transition-colors"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <span class="text-xl sm:text-2xl font-black tracking-wider text-white">SHECREATE<span class="text-amber-500">.</span></span>
+                        <span class="block text-[10px] font-medium text-stone-400 tracking-widest uppercase -mt-1">Digital Premium Store</span>
+                    </div>
+                </a>
+
+                <!-- NAV DESKTOP -->
+                <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+                    <a href="#home" class="text-amber-400 hover:text-amber-300 transition-colors flex items-center gap-2">
+                        <i class="fa-solid fa-house text-xs"></i> Beranda
+                    </a>
+                    <a href="#katalog" class="text-stone-300 hover:text-amber-400 transition-colors flex items-center gap-2">
+                        <i class="fa-solid fa-store text-xs"></i> Katalog Produk
+                    </a>
+                    <a href="#cara-order" class="text-stone-300 hover:text-amber-400 transition-colors flex items-center gap-2">
+                        <i class="fa-solid fa-circle-info text-xs"></i> Cara Order
+                    </a>
+                    <a href="#faq" class="text-stone-300 hover:text-amber-400 transition-colors flex items-center gap-2">
+                        <i class="fa-solid fa-circle-question text-xs"></i> FAQ
+                    </a>
+                </nav>
+
+                <!-- RIGHT ACTION BUTTON -->
+                <div class="hidden md:flex items-center gap-4">
+                    <a href="https://wa.me/6285731204310" target="_blank" class="flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-400 hover:to-teal-500 text-white font-semibold text-sm shadow-lg shadow-emerald-500/20 transition-all hover:scale-105 active:scale-95">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <span>Live Chat CS</span>
+                    </a>
+                </div>
+
+                <!-- MOBILE MENU BUTTON -->
+                <button id="mobile-menu-btn" class="md:hidden text-stone-300 hover:text-white p-2 rounded-lg focus:outline-none">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- MOBILE NAV MENU -->
+        <div id="mobile-menu" class="hidden md:hidden border-t border-stone-800 bg-stone-950/95 px-4 pt-3 pb-6 space-y-3">
+            <a href="#home" class="block px-3 py-2 rounded-lg text-amber-400 bg-stone-900 font-medium">Beranda</a>
+            <a href="#katalog" class="block px-3 py-2 rounded-lg text-stone-300 hover:bg-stone-900 font-medium">Katalog Produk</a>
+            <a href="#cara-order" class="block px-3 py-2 rounded-lg text-stone-300 hover:bg-stone-900 font-medium">Cara Order</a>
+            <a href="#faq" class="block px-3 py-2 rounded-lg text-stone-300 hover:bg-stone-900 font-medium">FAQ</a>
+            <a href="https://wa.me/6285731204310" target="_blank" class="block w-full text-center px-4 py-2.5 rounded-xl bg-emerald-600 text-white font-semibold mt-4">
+                <i class="fa-brands fa-whatsapp mr-2"></i> Hubungi CS via WA
+            </a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="relative pt-12 pb-16 overflow-hidden">
+        <!-- Glow background effects -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] bg-amber-500/15 blur-[120px] rounded-full pointer-events-none"></div>
+        <div class="absolute top-1/3 right-10 w-[300px] h-[300px] bg-orange-500/10 blur-[100px] rounded-full pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-stone-900 border border-amber-500/30 text-amber-300 text-xs sm:text-sm font-medium mb-6 shadow-inner">
+                <span class="w-2 h-2 rounded-full bg-amber-400 animate-ping"></span>
+                <span>Shecreate Store Official Digital Marketplace</span>
+            </div>
+
+            <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight mb-6">
+                Langganan Aplikasi Premium <br class="hidden sm:inline" />
+                <span class="text-gradient">Murah, Legal & Hemat</span>
+            </h1>
+
+            <p class="max-w-2xl mx-auto text-stone-400 text-sm sm:text-base leading-relaxed mb-8">
+                Dapatkan akun berlangganan ChatGPT, Canva Pro, CapCut Pro, Spotify Premium & YouTube Premium dengan harga terjangkau & pembayaran serba cepat via QRIS.
+            </p>
+
+            <!-- STATS BADGES -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
+                <div class="glass-panel p-4 rounded-2xl border border-stone-800">
+                    <div class="text-2xl font-bold text-amber-400">100%</div>
+                    <div class="text-xs text-stone-400 mt-1">Legal & Garansi</div>
+                </div>
+                <div class="glass-panel p-4 rounded-2xl border border-stone-800">
+                    <div class="text-2xl font-bold text-orange-400">Mulai 5k</div>
+                    <div class="text-xs text-stone-400 mt-1">Harga Terjangkau</div>
+                </div>
+                <div class="glass-panel p-4 rounded-2xl border border-stone-800">
+                    <div class="text-2xl font-bold text-emerald-400">QRIS All</div>
+                    <div class="text-xs text-stone-400 mt-1">Bayar Otomatis</div>
+                </div>
+                <div class="glass-panel p-4 rounded-2xl border border-stone-800">
+                    <div class="text-2xl font-bold text-red-400">24/7</div>
+                    <div class="text-xs text-stone-400 mt-1">Support Fast Respon</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAIN CATALOG & SEARCH SECTION -->
+    <section id="katalog" class="py-12 bg-stone-950/80 border-t border-stone-900 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center mb-8">
+                <h2 class="text-2xl sm:text-3xl font-bold text-white mb-2">Katalog Produk Shecreate Store</h2>
+                <p class="text-stone-400 text-sm">Pilih layanan aplikasi premium favoritmu sesuai durasi pilihan</p>
+            </div>
+
+            <!-- SEARCH & FILTER BAR -->
+            <div class="max-w-3xl mx-auto mb-10 space-y-4">
+                <!-- Search Input -->
+                <div class="relative">
+                    <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-stone-400"></i>
+                    <input type="text" id="search-input" placeholder="Cari aplikasi (ChatGPT, Canva, Capcut, Spotify, Youtube)..." 
+                        class="w-full pl-11 pr-10 py-3.5 bg-stone-900/90 border border-stone-800 rounded-2xl text-white placeholder-stone-500 focus:outline-none focus:border-amber-500 focus:ring-2 focus:ring-amber-500/20 text-sm transition-all shadow-inner">
+                    <button id="clear-search" class="hidden absolute right-3 top-1/2 -translate-y-1/2 text-stone-400 hover:text-white p-1">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+
+                <!-- Category Pills -->
+                <div class="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none text-xs font-medium" id="category-pills">
+                    <button class="cat-pill active px-4 py-2 rounded-xl bg-amber-500 text-black font-semibold shadow-md shadow-amber-500/20 whitespace-nowrap transition-all" data-category="all">
+                        <i class="fa-solid fa-border-all mr-1.5"></i>Semua Produk
+                    </button>
+                    <button class="cat-pill px-4 py-2 rounded-xl bg-stone-900 border border-stone-800 text-stone-300 hover:border-amber-500/50 hover:text-white whitespace-nowrap transition-all" data-category="ai">
+                        <i class="fa-solid fa-robot mr-1.5 text-emerald-400"></i>AI Tools
+                    </button>
+                    <button class="cat-pill px-4 py-2 rounded-xl bg-stone-900 border border-stone-800 text-stone-300 hover:border-amber-500/50 hover:text-white whitespace-nowrap transition-all" data-category="design">
+                        <i class="fa-solid fa-wand-magic-sparkles mr-1.5 text-purple-400"></i>Design & Edit
+                    </button>
+                    <button class="cat-pill px-4 py-2 rounded-xl bg-stone-900 border border-stone-800 text-stone-300 hover:border-amber-500/50 hover:text-white whitespace-nowrap transition-all" data-category="entertainment">
+                        <i class="fa-solid fa-compact-disc mr-1.5 text-amber-400"></i>Musik & Stream
+                    </button>
+                </div>
+            </div>
+
+            <!-- PRODUCT GRID -->
+            <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Dynamic Content Generated by JavaScript -->
+            </div>
+
+            <!-- EMPTY STATE -->
+            <div id="empty-state" class="hidden text-center py-16">
+                <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-stone-900 border border-stone-800 flex items-center justify-center text-stone-500 text-2xl">
+                    <i class="fa-solid fa-box-open"></i>
+                </div>
+                <h3 class="text-lg font-semibold text-white">Produk Tidak Ditemukan</h3>
+                <p class="text-stone-400 text-sm mt-1">Coba kata kunci pencarian atau kategori lain.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CARA ORDER SECTION -->
+    <section id="cara-order" class="py-16 border-t border-stone-900 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-2xl sm:text-3xl font-bold text-white mb-2">Cara Pembelian di Shecreate Store</h2>
+                <p class="text-stone-400 text-sm">Praktis & Instan hanya dalam beberapa langkah mudah</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 relative">
+                <!-- Step 1 -->
+                <div class="glass-panel p-6 rounded-2xl border border-stone-800 text-center relative flex flex-col items-center">
+                    <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-400 flex items-center justify-center text-xl font-bold mb-3">1</div>
+                    <h3 class="text-base font-semibold text-white mb-1">Pilih Produk & Plan</h3>
+                    <p class="text-xs text-stone-400">Klik 'Pilih Plan' pada produk yang kamu inginkan & tentukan durasinya.</p>
+                </div>
+                <!-- Step 2 -->
+                <div class="glass-panel p-6 rounded-2xl border border-stone-800 text-center relative flex flex-col items-center">
+                    <div class="w-12 h-12 rounded-xl bg-orange-500/10 border border-orange-500/30 text-orange-400 flex items-center justify-center text-xl font-bold mb-3">2</div>
+                    <h3 class="text-base font-semibold text-white mb-1">Lengkapi Data</h3>
+                    <p class="text-xs text-stone-400">Isi Nama, Nomor WhatsApp & Email aktif untuk pengiriman akses.</p>
+                </div>
+                <!-- Step 3 -->
+                <div class="glass-panel p-6 rounded-2xl border border-stone-800 text-center relative flex flex-col items-center">
+                    <div class="w-12 h-12 rounded-xl bg-yellow-500/10 border border-yellow-500/30 text-yellow-400 flex items-center justify-center text-xl font-bold mb-3">3</div>
+                    <h3 class="text-base font-semibold text-white mb-1">Scan Bayar QRIS</h3>
+                    <p class="text-xs text-stone-400">Scan QR Code Shecreate Store dari E-Wallet / Bank pilihanmu.</p>
+                </div>
+                <!-- Step 4 -->
+                <div class="glass-panel p-6 rounded-2xl border border-stone-800 text-center relative flex flex-col items-center">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 flex items-center justify-center text-xl font-bold mb-3">4</div>
+                    <h3 class="text-base font-semibold text-white mb-1">Konfirmasi WA</h3>
+                    <p class="text-xs text-stone-400">Kirim bukti pembayaran ke CS & akun langsung aktif!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section id="faq" class="py-16 bg-stone-950/80 border-t border-stone-900">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10">
+                <h2 class="text-2xl sm:text-3xl font-bold text-white mb-2">Frequently Asked Questions</h2>
+                <p class="text-stone-400 text-sm">Pertanyaan umum mengenai pemesanan di Shecreate Store</p>
+            </div>
+
+            <div class="space-y-4">
+                <div class="faq-item glass-panel rounded-2xl border border-stone-800 overflow-hidden">
+                    <button class="faq-toggle w-full px-6 py-4 text-left font-semibold text-white flex justify-between items-center">
+                        <span>Apakah langganan di Shecreate Store ini aman dan legal?</span>
+                        <i class="fa-solid fa-chevron-down text-stone-400 text-xs transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-4 text-sm text-stone-400 border-t border-stone-800/50 pt-3">
+                        Sangat aman dan 100% legal. Semua transaksi bergaransi penuh selama masa durasi langganan yang kamu beli.
+                    </div>
+                </div>
+
+                <div class="faq-item glass-panel rounded-2xl border border-stone-800 overflow-hidden">
+                    <button class="faq-toggle w-full px-6 py-4 text-left font-semibold text-white flex justify-between items-center">
+                        <span>Aplikasi apa saja yang bisa menggunakan QRIS?</span>
+                        <i class="fa-solid fa-chevron-down text-stone-400 text-xs transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-4 text-sm text-stone-400 border-t border-stone-800/50 pt-3">
+                        Kamu bisa scan QRIS Shecreate Store memakai semua aplikasi E-Wallet (DANA, GoPay, OVO, ShopeePay, LinkAja) serta M-Banking seluruh Bank Indonesia (BCA, Mandiri, BRI, BNI, Jago, dll).
+                    </div>
+                </div>
+
+                <div class="faq-item glass-panel rounded-2xl border border-stone-800 overflow-hidden">
+                    <button class="faq-toggle w-full px-6 py-4 text-left font-semibold text-white flex justify-between items-center">
+                        <span>Berapa lama proses pembuatan akun?</span>
+                        <i class="fa-solid fa-chevron-down text-stone-400 text-xs transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-4 text-sm text-stone-400 border-t border-stone-800/50 pt-3">
+                        Proses pengerjaan dilakukan cepat dalam kurun waktu 5 - 15 menit setelah konfirmasi pembayaran ke CS via WhatsApp.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-stone-950 border-t border-stone-900 pt-12 pb-8 text-stone-400 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div class="space-y-4">
+                    <div class="flex items-center gap-2">
+                        <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-amber-500 to-orange-500 flex items-center justify-center text-black font-bold">
+                            <i class="fa-solid fa-sparkles text-xs"></i>
+                        </div>
+                        <span class="text-xl font-bold text-white">SHECREATE<span class="text-amber-500">.</span></span>
+                    </div>
+                    <p class="text-xs text-stone-400 leading-relaxed">
+                        Penyedia layanan produk digital premium terlengkap & terpercaya dengan proses bayar praktis via QRIS.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-semibold mb-3">Navigasi</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#home" class="hover:text-amber-400 transition-colors">Beranda</a></li>
+                        <li><a href="#katalog" class="hover:text-amber-400 transition-colors">Katalog Produk</a></li>
+                        <li><a href="#cara-order" class="hover:text-amber-400 transition-colors">Cara Order</a></li>
+                        <li><a href="#faq" class="hover:text-amber-400 transition-colors">FAQ</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-semibold mb-3">Kontak Resmi CS</h4>
+                    <ul class="space-y-2.5 text-xs">
+                        <li class="flex items-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-emerald-400"></i>
+                            <span>+62 857 3120 4310</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-envelope text-amber-400"></i>
+                            <span>khanzrut@gmail.com</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-brands fa-instagram text-pink-400"></i>
+                            <span>@khaaanns</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-semibold mb-3">Metode Pembayaran</h4>
+                    <div class="bg-stone-900 border border-stone-800 p-3 rounded-xl text-center">
+                        <span class="block text-xs font-bold text-amber-400 mb-1">QRIS ALL PAYMENT</span>
+                        <p class="text-[10px] text-stone-400">Scan via DANA, GoPay, OVO, ShopeePay & M-Banking</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-stone-900 pt-6 text-center text-xs text-stone-500">
+                &copy; 2026 Shecreate Store. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- FLOATING WHATSAPP BUTTON -->
+    <a href="https://wa.me/6285731204310?text=Halo%20Admin%20Shecreate%20Store,%20saya%20mau%20tanya%20produk%20digital" target="_blank" class="fixed bottom-6 right-6 z-40 bg-emerald-500 hover:bg-emerald-400 text-white p-4 rounded-full shadow-2xl shadow-emerald-500/40 transition-all transform hover:scale-110 flex items-center justify-center group" title="Chat CS Shecreate Store">
+        <i class="fa-brands fa-whatsapp text-2xl"></i>
+        <span class="max-w-0 overflow-hidden group-hover:max-w-xs transition-all duration-300 ease-in-out text-xs font-bold whitespace-nowrap group-hover:ml-2">Live Chat CS</span>
+    </a>
+
+    <!-- INTERACTIVE ORDER MODAL -->
+    <div id="order-modal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden items-center justify-center p-4 overflow-y-auto">
+        <div class="glass-panel w-full max-w-xl rounded-3xl border border-stone-700 bg-stone-950 p-6 sm:p-8 relative shadow-2xl transition-all my-8">
+            
+            <!-- Close Modal Button -->
+            <button id="close-modal" class="absolute top-5 right-5 text-stone-400 hover:text-white w-9 h-9 rounded-full bg-stone-900 flex items-center justify-center transition-colors">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+
+            <!-- Modal Header -->
+            <div class="flex items-center gap-4 mb-6">
+                <div id="modal-product-icon" class="w-12 h-12 rounded-2xl bg-amber-500/20 border border-amber-500/40 flex items-center justify-center text-amber-400 text-2xl font-bold">
+                    <i class="fa-solid fa-sparkles"></i>
+                </div>
+                <div>
+                    <h3 id="modal-product-title" class="text-xl font-bold text-white">Nama Produk</h3>
+                    <span id="modal-product-badge" class="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-amber-500/20 text-amber-400 border border-amber-500/30 uppercase tracking-wider">Garansi Ready</span>
+                </div>
+            </div>
+
+            <!-- Wizard Steps Progress Bar -->
+            <div class="flex items-center justify-between mb-8 border-b border-stone-800 pb-4 text-xs font-medium text-stone-400">
+                <div class="step-indicator active flex items-center gap-1.5 text-amber-400" id="step-ind-1">
+                    <span class="w-5 h-5 rounded-full bg-amber-500 text-black font-bold flex items-center justify-center text-[10px]">1</span> Durasi
+                </div>
+                <div class="w-8 h-[1px] bg-stone-800"></div>
+                <div class="step-indicator flex items-center gap-1.5" id="step-ind-2">
+                    <span class="w-5 h-5 rounded-full bg-stone-800 text-stone-400 font-bold flex items-center justify-center text-[10px]">2</span> Data
+                </div>
+                <div class="w-8 h-[1px] bg-stone-800"></div>
+                <div class="step-indicator flex items-center gap-1.5" id="step-ind-3">
+                    <span class="w-5 h-5 rounded-full bg-stone-800 text-stone-400 font-bold flex items-center justify-center text-[10px]">3</span> QRIS Bayar
+                </div>
+            </div>
+
+            <!-- STEP 1: SELECT PLAN -->
+            <div id="modal-step-1" class="modal-step space-y-4">
+                <h4 class="text-sm font-semibold text-white mb-2">Pilih Variasi Durasi</h4>
+                <div id="plan-options" class="space-y-3">
+                    <!-- Dynamic Plans injected here -->
+                </div>
+            </div>
+
+            <!-- STEP 2: USER FORM DATA -->
+            <div id="modal-step-2" class="modal-step hidden space-y-4">
+                <h4 class="text-sm font-semibold text-white mb-2">Isi Data Pemesan</h4>
+                <div>
+                    <label class="block text-xs text-stone-400 mb-1">Nama Lengkap</label>
+                    <input type="text" id="user-name" placeholder="Contoh: Maya Indah" class="w-full px-4 py-3 bg-stone-900 border border-stone-800 rounded-xl text-white text-sm focus:outline-none focus:border-amber-500">
+                </div>
+                <div>
+                    <label class="block text-xs text-stone-400 mb-1">Nomor WhatsApp (Aktif)</label>
+                    <input type="tel" id="user-phone" placeholder="Contoh: 085731204310" class="w-full px-4 py-3 bg-stone-900 border border-stone-800 rounded-xl text-white text-sm focus:outline-none focus:border-amber-500">
+                </div>
+                <div>
+                    <label class="block text-xs text-stone-400 mb-1">Email (Untuk Akses Akun)</label>
+                    <input type="email" id="user-email" placeholder="Contoh: pemesan@gmail.com" class="w-full px-4 py-3 bg-stone-900 border border-stone-800 rounded-xl text-white text-sm focus:outline-none focus:border-amber-500">
+                </div>
+            </div>
+
+            <!-- STEP 3: QRIS DISPLAY & ORDER SUMMARY -->
+            <div id="modal-step-3" class="modal-step hidden space-y-4">
+                <h4 class="text-sm font-semibold text-white text-center">Scan QRIS Shecreate Store</h4>
+                
+                <!-- QRIS DISPLAY BOX -->
+                <div class="bg-gradient-to-b from-amber-500/10 to-orange-500/10 border border-amber-500/30 rounded-2xl p-4 text-center space-y-3">
+                    
+                    <!-- FLYER DISPLAY -->
+                    <div class="max-w-[280px] mx-auto bg-amber-100 p-4 rounded-2xl border-4 border-amber-400 shadow-xl text-black">
+                        <div class="bg-amber-400 py-1.5 px-3 rounded-lg font-black text-xs uppercase tracking-wider mb-2">
+                            SHECREATE STORE
+                        </div>
+                        <div class="text-sm font-black text-stone-900 mb-2">PAY WITH QR CODE HERE</div>
+                        
+                        <!-- QR CODE SVG/IMAGE -->
+                        <div class="bg-white p-2.5 rounded-xl border-2 border-stone-900 shadow-inner my-2 flex justify-center">
+                            <svg class="w-48 h-48" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="200" height="200" fill="white"/>
+                                <!-- QR Outer Frames -->
+                                <rect x="20" y="20" width="50" height="50" fill="black"/>
+                                <rect x="25" y="25" width="40" height="40" fill="white"/>
+                                <rect x="32" y="32" width="26" height="26" fill="black"/>
+                                
+                                <rect x="130" y="20" width="50" height="50" fill="black"/>
+                                <rect x="135" y="25" width="40" height="40" fill="white"/>
+                                <rect x="142" y="32" width="26" height="26" fill="black"/>
+                                
+                                <rect x="20" y="130" width="50" height="50" fill="black"/>
+                                <rect x="25" y="135" width="40" height="40" fill="white"/>
+                                <rect x="32" y="142" width="26" height="26" fill="black"/>
+                                
+                                <!-- Decorative Data Bits -->
+                                <rect x="80" y="20" width="12" height="12" fill="black"/>
+                                <rect x="100" y="20" width="12" height="12" fill="black"/>
+                                <rect x="80" y="40" width="24" height="12" fill="black"/>
+                                <rect x="90" y="60" width="12" height="30" fill="black"/>
+                                
+                                <rect x="20" y="80" width="30" height="12" fill="black"/>
+                                <rect x="20" y="100" width="12" height="20" fill="black"/>
+                                <rect x="40" y="100" width="20" height="12" fill="black"/>
+                                
+                                <rect x="80" y="100" width="40" height="12" fill="black"/>
+                                <rect x="140" y="80" width="30" height="20" fill="black"/>
+                                <rect x="130" y="110" width="20" height="20" fill="black"/>
+                                <rect x="160" y="110" width="20" height="40" fill="black"/>
+                                
+                                <rect x="80" y="130" width="12" height="30" fill="black"/>
+                                <rect x="100" y="140" width="20" height="12" fill="black"/>
+                                <rect x="80" y="170" width="40" height="12" fill="black"/>
+                                <rect x="130" y="160" width="30" height="20" fill="black"/>
+                            </svg>
+                        </div>
+                        
+                        <div class="bg-amber-300 py-1.5 px-2 rounded-full border border-amber-500 font-bold text-[10px] uppercase text-stone-900 mt-2">
+                            SCAN TO PAY & GET 10% OFF!
+                        </div>
+                        
+                        <div class="mt-3 text-[9px] font-semibold text-stone-700 flex justify-between border-t border-amber-300 pt-2">
+                            <span>📞 085731204310</span>
+                            <span>📷 @khaaanns</span>
+                        </div>
+                    </div>
+                    
+                    <p class="text-xs text-amber-300 font-medium">Bisa di-scan dari DANA, GoPay, OVO, ShopeePay & M-Banking</p>
+                </div>
+
+                <!-- Order Summary Box -->
+                <div class="bg-stone-900 border border-stone-800 rounded-xl p-4 text-xs space-y-2 mt-4">
+                    <div class="flex justify-between text-stone-400">
+                        <span>Produk:</span>
+                        <span id="summary-product-name" class="text-white font-medium">-</span>
+                    </div>
+                    <div class="flex justify-between text-stone-400">
+                        <span>Durasi / Paket:</span>
+                        <span id="summary-plan-name" class="text-white font-medium">-</span>
+                    </div>
+                    <div class="flex justify-between text-stone-400">
+                        <span>Metode Pembayaran:</span>
+                        <span class="text-amber-400 font-bold">QRIS Shecreate Store</span>
+                    </div>
+                    <div class="border-t border-stone-800 pt-2 flex justify-between font-bold text-sm text-white">
+                        <span>Total Tagihan:</span>
+                        <span id="summary-total-price" class="text-amber-400">Rp 0</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MODAL CONTROLS -->
+            <div class="flex items-center justify-between mt-8 pt-4 border-t border-stone-800">
+                <button id="btn-back" class="px-5 py-2.5 rounded-xl border border-stone-800 text-stone-300 text-xs font-medium hover:bg-stone-900 hidden">
+                    Kembali
+                </button>
+                <div class="ml-auto">
+                    <button id="btn-next" class="px-6 py-2.5 rounded-xl bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-400 hover:to-orange-500 text-black font-bold text-xs shadow-lg shadow-amber-500/20 transition-all">
+                        Lanjut <i class="fa-solid fa-arrow-right ml-1"></i>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // REVISED SHECREATE STORE PRODUCTS LIST
+        const productsData = [
+            {
+                id: 'chatgpt-go',
+                name: 'ChatGPT Go',
+                category: 'ai',
+                icon: 'fa-solid fa-robot text-emerald-400',
+                badge: 'Fitur Unggulan',
+                badgeColor: 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30',
+                startingPrice: 35000,
+                description: 'Akses cepat ChatGPT Go dengan respon instan & stabil.',
+                features: ['Akses Cepat & Tanpa Antri', 'Sangat Cocok untuk Tugas & Kerja', 'Garansi Full 1 Bulan'],
+                plans: [
+                    { name: '1 Bulan', price: 35000 }
+                ]
+            },
+            {
+                id: 'chatgpt-plus',
+                name: 'ChatGPT Plus',
+                category: 'ai',
+                icon: 'fa-solid fa-brain text-amber-400',
+                badge: 'Terlaris',
+                badgeColor: 'bg-amber-500/20 text-amber-400 border-amber-500/30',
+                startingPrice: 45000,
+                description: 'Model GPT-4o, DALL-E 3 & Analisis Data Lengkap.',
+                features: ['Akses GPT-4o Tercepat', 'DALL-E 3 Image Generator', 'Garansi Full 1 Bulan'],
+                plans: [
+                    { name: '1 Bulan', price: 45000 }
+                ]
+            },
+            {
+                id: 'canva-pro',
+                name: 'Canva Pro',
+                category: 'design',
+                icon: 'fa-solid fa-wand-magic-sparkles text-purple-400',
+                badge: 'Paling Hemat',
+                badgeColor: 'bg-purple-500/20 text-purple-400 border-purple-500/30',
+                startingPrice: 5000,
+                description: 'Akses Ratusan Ribu Template Premium & Hapus Background.',
+                features: ['Pakai Email Pribadi', 'Semua Fitur Pro Terbuka', 'Garansi Sesuai Durasi'],
+                plans: [
+                    { name: '1 Bulan', price: 5000 },
+                    { name: '3 Bulan', price: 10000 },
+                    { name: '1 Tahun', price: 25000 }
+                ]
+            },
+            {
+                id: 'capcut-pro',
+                name: 'CapCut Pro',
+                category: 'design',
+                icon: 'fa-solid fa-scissors text-cyan-400',
+                badge: 'Ready Stock',
+                badgeColor: 'bg-cyan-500/20 text-cyan-400 border-cyan-500/30',
+                startingPrice: 35000,
+                description: 'Fitur Auto Caption AI, Efek Pro, & Export Kualitas Tinggi.',
+                features: ['Bisa PC & Handphone', 'Efek & Transisi Pro Unlocked', 'Garansi Full 1 Bulan'],
+                plans: [
+                    { name: '1 Bulan', price: 35000 }
+                ]
+            },
+            {
+                id: 'spotify-premium',
+                name: 'Spotify Premium',
+                category: 'entertainment',
+                icon: 'fa-solid fa-music text-emerald-400',
+                badge: 'Bebas Iklan',
+                badgeColor: 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30',
+                startingPrice: 25000,
+                description: 'Dengarkan Musik Tanpa Iklan & Download Lagu Offline.',
+                features: ['Suara High Quality', 'Bebas Skip Lagu Unlimited', 'Garansi Full Masa Aktif'],
+                plans: [
+                    { name: '1 Bulan', price: 25000 },
+                    { name: '3 Bulan', price: 45000 }
+                ]
+            },
+            {
+                id: 'youtube-premium',
+                name: 'YouTube Premium',
+                category: 'entertainment',
+                icon: 'fa-brands fa-youtube text-red-500',
+                badge: 'Favorit',
+                badgeColor: 'bg-red-500/20 text-red-400 border-red-500/30',
+                startingPrice: 15000,
+                description: 'Nonton Video Bebas Iklan + Gratis YouTube Music Pro.',
+                features: ['Bebas Iklan Selamanya', 'Background Play Video', 'Garansi Sesuai Durasi'],
+                plans: [
+                    { name: '1 Bulan', price: 15000 },
+                    { name: '3 Bulan', price: 30000 }
+                ]
+            }
+        ];
+
+        // RENDER PRODUCTS GRID
+        function renderProducts(items) {
+            const grid = document.getElementById('product-grid');
+            const emptyState = document.getElementById('empty-state');
+            grid.innerHTML = '';
+
+            if (items.length === 0) {
+                emptyState.classList.remove('hidden');
+                return;
+            } else {
+                emptyState.classList.add('hidden');
+            }
+
+            items.forEach(product => {
+                const card = document.createElement('div');
+                card.className = 'glass-card rounded-2xl p-5 flex flex-col justify-between relative group';
+                card.innerHTML = `
+                    <div>
+                        <div class="flex items-start justify-between gap-3 mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-stone-900 border border-stone-800 flex items-center justify-center text-2xl shadow-md group-hover:scale-110 transition-transform">
+                                <i class="${product.icon}"></i>
+                            </div>
+                            <span class="text-[10px] font-bold px-2.5 py-1 rounded-full border ${product.badgeColor}">
+                                ${product.badge}
+                            </span>
+                        </div>
+
+                        <h3 class="text-lg font-bold text-white mb-1 group-hover:text-amber-400 transition-colors">${product.name}</h3>
+                        <p class="text-xs text-stone-400 mb-4 line-clamp-2">${product.description}</p>
+
+                        <div class="space-y-1.5 mb-6">
+                            ${product.features.map(f => `
+                                <div class="flex items-center gap-2 text-xs text-stone-300">
+                                    <i class="fa-solid fa-circle-check text-amber-400 text-[10px]"></i>
+                                    <span>${f}</span>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+
+                    <div class="pt-4 border-t border-stone-800/80 flex items-center justify-between">
+                        <div>
+                            <span class="block text-[10px] text-stone-500 uppercase tracking-wider font-semibold">Harga Mulai</span>
+                            <span class="text-base font-extrabold text-amber-400">Rp ${product.startingPrice.toLocaleString('id-ID')}</span>
+                        </div>
+                        <button onclick="openOrderModal('${product.id}')" class="px-4 py-2 rounded-xl bg-amber-500 hover:bg-amber-400 text-black font-bold text-xs shadow-lg shadow-amber-500/20 transition-all active:scale-95">
+                            Pilih Plan
+                        </button>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        // FILTER & SEARCH LOGIC
+        let activeCategory = 'all';
+        let searchQuery = '';
+
+        function filterProducts() {
+            const filtered = productsData.filter(item => {
+                const matchesCategory = activeCategory === 'all' || item.category === activeCategory;
+                const matchesSearch = item.name.toLowerCase().includes(searchQuery.toLowerCase()) || 
+                                      item.description.toLowerCase().includes(searchQuery.toLowerCase());
+                return matchesCategory && matchesSearch;
+            });
+            renderProducts(filtered);
+        }
+
+        // Search Input Event Handler
+        const searchInput = document.getElementById('search-input');
+        const clearBtn = document.getElementById('clear-search');
+
+        searchInput.addEventListener('input', (e) => {
+            searchQuery = e.target.value.trim();
+            if (searchQuery.length > 0) {
+                clearBtn.classList.remove('hidden');
+            } else {
+                clearBtn.classList.add('hidden');
+            }
+            filterProducts();
+        });
+
+        clearBtn.addEventListener('click', () => {
+            searchInput.value = '';
+            searchQuery = '';
+            clearBtn.classList.add('hidden');
+            filterProducts();
+        });
+
+        // Category Pills Handler
+        const pills = document.querySelectorAll('.cat-pill');
+        pills.forEach(pill => {
+            pill.addEventListener('click', () => {
+                pills.forEach(p => {
+                    p.classList.remove('bg-amber-500', 'text-black', 'font-semibold');
+                    p.classList.add('bg-stone-900', 'border', 'border-stone-800', 'text-stone-300');
+                });
+                pill.classList.remove('bg-stone-900', 'border', 'border-stone-800', 'text-stone-300');
+                pill.classList.add('bg-amber-500', 'text-black', 'font-semibold');
+
+                activeCategory = pill.getAttribute('data-category');
+                filterProducts();
+            });
+        });
+
+        // FAQ ACCORDION LOGIC
+        document.querySelectorAll('.faq-toggle').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                const icon = button.querySelector('i');
+                content.classList.toggle('hidden');
+                icon.classList.toggle('rotate-180');
+            });
+        });
+
+        // MOBILE MENU TOGGLE
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // MODAL WIZARD STATE & LOGIC
+        let currentStep = 1;
+        let selectedProduct = null;
+        let selectedPlan = null;
+
+        const modal = document.getElementById('order-modal');
+        const closeModalBtn = document.getElementById('close-modal');
+        const btnNext = document.getElementById('btn-next');
+        const btnBack = document.getElementById('btn-back');
+
+        function openOrderModal(productId) {
+            selectedProduct = productsData.find(p => p.id === productId);
+            if (!selectedProduct) return;
+
+            // Set Header Details
+            document.getElementById('modal-product-title').innerText = selectedProduct.name;
+            document.getElementById('modal-product-badge').innerText = selectedProduct.badge;
+            document.getElementById('modal-product-icon').innerHTML = `<i class="${selectedProduct.icon}"></i>`;
+
+            // Render Plan Options
+            const planContainer = document.getElementById('plan-options');
+            planContainer.innerHTML = '';
+            selectedProduct.plans.forEach((plan, index) => {
+                const label = document.createElement('label');
+                label.className = `block p-3.5 rounded-xl border cursor-pointer transition-all ${index === 0 ? 'border-amber-500 bg-amber-500/10' : 'border-stone-800 bg-stone-900 hover:border-stone-700'}`;
+                label.innerHTML = `
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-3">
+                            <input type="radio" name="plan" value="${index}" ${index === 0 ? 'checked' : ''} class="accent-amber-500">
+                            <div>
+                                <div class="text-xs font-bold text-white">${plan.name}</div>
+                                <div class="text-[10px] text-stone-400">Garansi Reseller Resmi Shecreate</div>
+                            </div>
+                        </div>
+                        <span class="text-sm font-extrabold text-amber-400">Rp ${plan.price.toLocaleString('id-ID')}</span>
+                    </div>
+                `;
+                planContainer.appendChild(label);
+            });
+
+            // Handle Plan Radio Highlight
+            planContainer.querySelectorAll('input[name="plan"]').forEach(radio => {
+                radio.addEventListener('change', (e) => {
+                    planContainer.querySelectorAll('label').forEach(l => {
+                        l.classList.remove('border-amber-500', 'bg-amber-500/10');
+                        l.classList.add('border-stone-800', 'bg-stone-900');
+                    });
+                    const parentLabel = e.target.closest('label');
+                    parentLabel.classList.remove('border-stone-800', 'bg-stone-900');
+                    parentLabel.classList.add('border-amber-500', 'bg-amber-500/10');
+                });
+            });
+
+            // Set default selected plan
+            selectedPlan = selectedProduct.plans[0];
+
+            // Reset Wizard to Step 1
+            currentStep = 1;
+            updateStepView();
+
+            // Show Modal
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        closeModalBtn.addEventListener('click', () => {
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        });
+
+        function updateStepView() {
+            // Toggle Step Contents
+            document.getElementById('modal-step-1').classList.toggle('hidden', currentStep !== 1);
+            document.getElementById('modal-step-2').classList.toggle('hidden', currentStep !== 2);
+            document.getElementById('modal-step-3').classList.toggle('hidden', currentStep !== 3);
+
+            // Back Button Visibility
+            btnBack.classList.toggle('hidden', currentStep === 1);
+
+            // Next Button Text
+            if (currentStep === 3) {
+                btnNext.innerHTML = `<i class="fa-brands fa-whatsapp mr-1 text-base"></i> Kirim Bukti Bayar ke WA`;
+                btnNext.className = "px-6 py-2.5 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-400 hover:to-teal-500 text-white font-bold text-xs shadow-lg shadow-emerald-500/20 transition-all";
+            } else {
+                btnNext.innerHTML = `Lanjut <i class="fa-solid fa-arrow-right ml-1"></i>`;
+                btnNext.className = "px-6 py-2.5 rounded-xl bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-400 hover:to-orange-500 text-black font-bold text-xs shadow-lg shadow-amber-500/20 transition-all";
+            }
+
+            // Step Indicator Styling
+            for (let i = 1; i <= 3; i++) {
+                const ind = document.getElementById(`step-ind-${i}`);
+                if (i <= currentStep) {
+                    ind.classList.add('text-amber-400');
+                    ind.querySelector('span').className = "w-5 h-5 rounded-full bg-amber-500 text-black font-bold flex items-center justify-center text-[10px]";
+                } else {
+                    ind.classList.remove('text-amber-400');
+                    ind.querySelector('span').className = "w-5 h-5 rounded-full bg-stone-800 text-stone-400 font-bold flex items-center justify-center text-[10px]";
+                }
+            }
+        }
+
+        btnNext.addEventListener('click', () => {
+            if (currentStep === 1) {
+                const selectedPlanIdx = document.querySelector('input[name="plan"]:checked').value;
+                selectedPlan = selectedProduct.plans[selectedPlanIdx];
+                currentStep = 2;
+                updateStepView();
+            } else if (currentStep === 2) {
+                const name = document.getElementById('user-name').value.trim();
+                const phone = document.getElementById('user-phone').value.trim();
+                const email = document.getElementById('user-email').value.trim();
+
+                if (!name || !phone || !email) {
+                    alert('Mohon lengkapi semua data pemesan (Nama, WA, & Email)!');
+                    return;
+                }
+
+                // Update Summary Info
+                document.getElementById('summary-product-name').innerText = selectedProduct.name;
+                document.getElementById('summary-plan-name').innerText = selectedPlan.name;
+                document.getElementById('summary-total-price').innerText = `Rp ${selectedPlan.price.toLocaleString('id-ID')}`;
+
+                currentStep = 3;
+                updateStepView();
+            } else if (currentStep === 3) {
+                // Submit to WhatsApp
+                const name = document.getElementById('user-name').value.trim();
+                const phone = document.getElementById('user-phone').value.trim();
+                const email = document.getElementById('user-email').value.trim();
+
+                const textMessage = 
+`*HALO ADMIN SHECREATE STORE, SAYA MAU PESAN!* ✨
+-----------------------------------------
+📌 *Produk:* ${selectedProduct.name}
+📦 *Durasi/Paket:* ${selectedPlan.name}
+💰 *Total Tagihan:* Rp ${selectedPlan.price.toLocaleString('id-ID')}
+💳 *Metode Pembayaran:* QRIS Shecreate Store
+
+👤 *DATA PEMESAN:*
+• *Nama:* ${name}
+• *No. WA:* ${phone}
+• *Email:* ${email}
+-----------------------------------------
+Saya sudah/akan melakukan pembayaran via Scan QRIS Shecreate Store. Mohon segera diproses ya kak! Terima kasih.`;
+
+                const waUrl = `https://wa.me/6285731204310?text=${encodeURIComponent(textMessage)}`;
+                window.open(waUrl, '_blank');
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            }
+        });
+
+        btnBack.addEventListener('click', () => {
+            if (currentStep > 1) {
+                currentStep--;
+                updateStepView();
+            }
+        });
+
+        // INIT APP
+        window.onload = function() {
+            renderProducts(productsData);
+        };
+    </script>
+</body>
+</html>
